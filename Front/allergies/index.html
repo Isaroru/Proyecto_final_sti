@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Meal</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../components/ingredient_card/style.css">
+</head>
+
+<body>
+    <main>
+        <section id="header">
+            <h1>
+                Now on...
+            </h1>
+            <p>
+                Which of<b> these ingredients</b> are you <b> allergic to?</b>
+            </p>
+        </section>
+
+        <section id="ingrd_cards">
+            <ingredient-card></ingredient-card>
+            <ingredient-card></ingredient-card>
+            <ingredient-card></ingredient-card>
+            <ingredient-card></ingredient-card>
+            <ingredient-card></ingredient-card>
+            <ingredient-card></ingredient-card>
+        </section>
+        <section id="btn">
+            <button id="next_btn">Next!</button>
+        </section>
+
+    </main>
+    <script type="module" src="../components/ingredient_card/ingredientCard.js"></script>
+    <script type="module" src="./allergies.js"></script>
+</body>
+
+</html>

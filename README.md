@@ -2,6 +2,6 @@
 ### Installation
 - [x] Clone the repo
 - [x] Create environment: python3 -m venv venv
-- [ ] Activate environment: source venv/bin/activate
-- [ ] Install dependencies: pip install -r requirements.txt
-- [ ] Execute app on terminal: python3 main.py
+- [x] Activate environment: source venv/bin/activate
+- [x] Install dependencies: pip install -r requirements.txt
+- [x] Execute app on terminal: python3 main.py

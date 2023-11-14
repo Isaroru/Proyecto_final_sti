@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
 # Declare the APP server instance
@@ -6,8 +6,13 @@ app = Flask(__name__)
 # Enable CORS policies
 CORS(app)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
 # GET Endpoint =============================================================================
-@app.route("/", methods=["GET"])
+@app.route("/get", methods=["GET"])
 def index():
   return jsonify({"msg": "Hello Python REST API"})
 

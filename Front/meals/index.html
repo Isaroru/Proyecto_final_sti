@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Meal</title>
+    <link rel="stylesheet" href="../components/meal_card/style.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+      
+    <section id="header">
+        <h1>
+            Let’s start !
+        </h1>
+        <p>
+            Which of<b> these dishes</b> do you <b>like the most?</b>
+        </p>
+    </section>
+    
+    <section id="meal_cards">
+        <meal-card></meal-card>
+        <meal-card></meal-card>
+        <meal-card></meal-card>
+        <meal-card></meal-card>
+    </section>
+    <section id="btn">
+        <button id="next_btn">Next!</button>
+    </section>
+      
+    </main>
+    <script type="module" src="../components/meal_card/mealCard.js"></script>
+    <script type="module" src="./meals.js"></script>
+</body>
+</html>
