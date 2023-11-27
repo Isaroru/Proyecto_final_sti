@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quick meal</title>
+        <link rel="stylesheet" href="../static/css/hates.css" />
+        <script type="module" src="../static/js/hates.js"></script>
+    </head>
+    <body>
+        <div id="loading-screen">Loading...</div>
+        <main>
+            <section id="header">
+                <h1>Finally</h1>
+                <p>Which of<b> these dishes</b> do you <b>hate the most?</b></p>
+                <div id="select-amount">
+                    <p>How many recommendations do you want?</p>
+                    <select id="recommendations-select"></select>
+                </div>
+            </section>
+
+
+            <section id="meal_cards">
+                {% if meals %} {% for meal_key, meal_data in meals.items() %}
+                <article class="meal">
+                    <div id="info_card">
+                        <div class="img-container">
+                            <img
+                                class="meal_image"
+                                src="{{ meal_data['strMealThumb'] }}"
+                            />
+                        </div>
+                        <div class="title_checkbox_container">
+                            <h5 class="meal_title">
+                                {{ meal_data['strMeal'] }}
+                            </h5>
+                            <label class="container">
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    class="meal-checkbox"
+                                    data-meal-id="{{ meal_data['idMeal'] }}"
+                                />
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div id="tags">
+                            <h4 class="category_style">{{ meal_key }}</h4>
+                            <span class="meal_area">{{ meal_data['strArea'] }}</span>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %} {% else %}
+                <h2>
+                    You have no recomendations left due to your allergies, just
+                    restart c:
+                </h2>
+                {% endif %}
+            </section>
+
+            <section id="btn">
+                <button id="restart_btn">Restart</button>
+                <button id="next_btn">Next!</button>
+            </section>
+        </main>
+    </body>
+</html>

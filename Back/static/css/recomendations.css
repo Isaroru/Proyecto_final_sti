@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+main{
+    height: auto;
+    background-color: #FF9F43;
+    background-image: url(../img/bg.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+h1{
+    font-size: 4.3rem;
+    font-family:'Poppins', sans-serif;
+    line-height: 110%;
+}
+
+p{
+    font-size: 18pt;
+}
+
+#header{
+    padding: 4rem;
+    color: white;
+    height: 40%;
+}
+
+#restart_btn {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 22pt;
+    background-color: #e91818;
+    border: none;
+    border-radius: 8px;
+    width: 10rem;
+    padding: 10px;
+}
+
+#restart_btn:hover {
+    background-color: #e44d4d;
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.meal_recommend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FCFAF8;
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 2px 4px 8px 0px rgba(228, 125, 26, 0.5);
+    margin: 4rem;
+    width: 70%;
+    gap: 3rem;
+}
+
+#info_card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    color: #2f2f2f;
+    height: 100%;
+    width: 100%;
+}
+
+#btn{
+    padding: 2rem 7rem;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    height: 10%;
+}

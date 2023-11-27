@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quick Meal</title>
+        <link rel="stylesheet" href="../static/css/allergies.css" />
+    </head>
+
+    <body>
+        <div id="loading-screen">Loading...</div>
+        <main>
+            <section id="header">
+                <h1>Now on...</h1>
+                <p>
+                    Which of<b> these ingredients</b> are you
+                    <b> allergic to?</b>
+                </p>
+            </section>
+
+            <section id="ingrd_cards">
+                <article class="ingrd">
+                    <div id="info_card">
+                        <div
+                            id="tags"
+                            style="flex-direction: column; height: 100%"
+                        >
+                            <label class="container">
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    id="none-checkbox"
+                                />
+                                <span
+                                    class="checkmark"
+                                    id="none-checkmark"
+                                    style="
+                                        margin-left: -80%;
+                                        width: 90px;
+                                        height: 90px;
+                                    "
+                                ></span>
+                            </label>
+                            <h4 class="category_style">None</h4>
+                        </div>
+                    </div>
+                </article>
+                {% for ingredient_key, ingredient_data in ingredients.items() %}
+                <article class="ingrd">
+                    <div id="info_card">
+                        <img
+                            class="ingrd_image"
+                            src="{{ ingredient_data['img'] }}"
+                        />
+                        <div id="tags">
+                            <h4 class="category_style">{{ ingredient_key }}</h4>
+                            <label class="container">
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    class="ingredient-checkbox"
+                                    data-ingredient-name="{{ ingredient_key }}"
+                                />
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </section>
+            <section id="btn">
+                <button id="restart_btn">Restart</button>
+                <button id="next_btn">Next!</button>
+            </section>
+        </main>
+        <script type="module" src="../static/js/allergies.js"></script>
+    </body>
+</html>

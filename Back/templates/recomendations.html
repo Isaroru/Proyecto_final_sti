@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quick meal</title>
+        <link rel="stylesheet" href="../static/css/recomendations.css" />
+    </head>
+    <body>
+        <main>
+            <section id="header">
+                <h1>Congrats !</h1>
+                <p>This is your <b>recipe recommendation:</b></p>
+            </section>
+
+            <section id="meal_cards">
+                {% for meal_key, meal_data in meals.items() %}
+                <article class="meal_recommend">
+                    <img
+                        class="meal_image"
+                        style="width: 40%"
+                        src="{{ meal_data['strMealThumb'] }}"
+                    />
+                    <div id="info_card">
+                        <h1 class="meal_title">{{ meal_data['strMeal'] }}</h1>
+                        <h3 class="category_style">
+                            {{ meal_data['strCategory'] }}
+                        </h3>
+                        <h4 class="meal_area">{{ meal_data['strArea'] }}</h4>
+                        <p style="font-size: medium">
+                            {{ meal_data['strInstructions'] }}
+                        </p>
+                    </div>
+                </article>
+                {% endfor %}
+            </section>
+
+            <section id="btn">
+                <button id="restart_btn">Restart</button>
+            </section>
+        </main>
+        <script type="module" src="../static/js/recomendations.js"></script>
+    </body>
+</html>

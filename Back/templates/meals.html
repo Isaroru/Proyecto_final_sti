@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quick Meal</title>
+        <!--<link rel="stylesheet" href="../components/meal_card/style.css" />-->
+        <link rel="stylesheet" href="../static/css/meals.css" />
+    </head>
+    <body>
+        <main>
+            <section id="header">
+                <h1>Let’s start !</h1>
+                <p>Which of<b> these dishes</b> do you <b>like the most?</b></p>
+            </section>
+
+            <section id="meal_cards">
+                {% for meal_key, meal_data in meals.items() %}
+                <article class="meal">
+                    <div id="info_card">
+                        <div class="img-container">
+                            <img
+                                class="meal_image"
+                                src="{{ meal_data['strMealThumb'] }}"
+                            />
+                        </div>
+                        <div class="title_checkbox_container">
+                            <h5 class="meal_title">
+                                {{ meal_data['strMeal'] }}
+                            </h5>
+                            <label class="container">
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    class="meal-checkbox"
+                                    data-meal-id="{{ meal_data['idMeal'] }}"
+                                />
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div id="tags">
+                            <h4 class="category_style">{{ meal_key }}</h4>
+                            <span class="meal_area"
+                                >{{ meal_data['strArea'] }}</span
+                            >
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </section>
+
+            <section id="btn">
+                <button id="restart_btn">Restart</button>
+                <button id="next_btn">Next!</button>
+            </section>
+        </main>
+        <!--<script
+            type="module"
+            src="../components/meal_card/mealCard.js"
+        ></script>-->
+        <script type="module" src="../static/js/meals.js"></script>
+    </body>
+</html>
