@@ -36,6 +36,7 @@ p {
 }
 
 #btn {
+    background-color: #FCFAF8;
     padding: 2rem 7rem;
     display: flex;
     flex-direction: row;
